@@ -1,0 +1,11 @@
+# It's recommended to use an environment variable, DATABASE_URL, to configure a database
+# The database url can be setup in env_vars.rb of Luban:
+#
+#   env_vars[:database_url] = 
+#      "mysql2://username:password@host:port/<%= application_name %>_<%= stage %>?encoding=utf8&pool=5"
+#
+# Please refer to Rails Guides for the details of database url:
+#   http://guides.rubyonrails.org/configuring.html#configuring-a-database
+
+<%= stage %>:
+  url: <%%= ENV["DATABASE_URL"] %>
