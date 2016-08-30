@@ -2,12 +2,21 @@ module Luban
   module Deployment
     module Applications
       class Rails
-        class Publisher < Luban::Deployment::Application::Publisher
+        class Publisher < Luban::Deployment::Applications::Rack::Publisher
+          def compose_command(cmd)
+            super("RAILS_ENV=#{stage} #{bundle_cmd} exec #{cmd}")
+          end
+
           protected
+
+          def init
+            super
+            linked_files.push('database.yml', 'secrets.yml')
+          end
 
           def publish!
             super
-            publish_assets!
+            publish_assets! if publish_app?
           end
 
           def publish_assets!
@@ -16,15 +25,11 @@ module Luban
           end
 
           def compile_assets!
-            within(release_path) do
-              execute(bundle_cmd, :exec, :rake, "assets:precompile")
-            end
+            execute(compose_command("rake assets:precompile"))
           end
 
           def cleanup_assets!
-            within(release_path) do
-              execute(bundle_cmd, :exec, :rake, "assets:clean")
-            end
+            execute(compose_command("rake assets:clean"))
           end
         end
       end

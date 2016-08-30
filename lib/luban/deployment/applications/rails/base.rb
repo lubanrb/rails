@@ -10,11 +10,6 @@ module Luban
           super
           default_templates_paths.unshift(base_templates_path(__FILE__))
         end
-
-        def set_default_application_parameters
-          super
-          linked_files.push('database.yml', 'secrets.yml')
-        end
       end
     end
   end
