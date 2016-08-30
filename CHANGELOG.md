@@ -1,6 +1,6 @@
 # Change log
 
-## Version 0.1.1 (Aug 30)
+## Version 0.1.1 (Aug 30, 2016)
 
 New features:
   * Changed linked_dirs/linked_files setup in Publisher
