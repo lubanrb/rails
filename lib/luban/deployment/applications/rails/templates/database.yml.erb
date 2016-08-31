@@ -1,8 +1,15 @@
 # It's recommended to use an environment variable, DATABASE_URL, to configure a database
 # The database url can be setup in env_vars.rb of Luban:
 #
+#   MySQL:
+#
 #   env_vars[:database_url] = 
-#      "mysql2://username:password@host:port/<%= application_name %>_<%= stage %>?encoding=utf8&pool=5"
+#      "mysql2://username:password@host:port/#{application}_#{stage}?encoding=utf8&pool=5"
+#
+#   SQLite3:
+#
+#   env_vars[:database_url] = 
+#      "sqlite3:db/#{application}_#{stage}.sqlite3?pool=5&timeout=5000"
 #
 # Please refer to Rails Guides for the details of database url:
 #   http://guides.rubyonrails.org/configuring.html#configuring-a-database
