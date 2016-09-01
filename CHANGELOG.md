@@ -1,5 +1,11 @@
 # Change log
 
+## Version 0.1.2 (Sept 01, 2016)
+
+Bug fixes:
+  * Moved assets precompilation after source publication and gem bundling
+  * Bump up gem dependency of Luban to version 0.7.9
+
 ## Version 0.1.1 (Aug 30, 2016)
 
 New features:
