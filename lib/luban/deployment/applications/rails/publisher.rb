@@ -3,8 +3,8 @@ module Luban
     module Applications
       class Rails
         class Publisher < Luban::Deployment::Applications::Rack::Publisher
-          def compose_command(cmd)
-            super("RAILS_ENV=#{stage} #{bundle_cmd} exec #{cmd}")
+          def shell_command_prefix
+            @shell_command_prefix ||= super.unshift("RAILS_ENV=#{stage}")
           end
 
           def after_publish
