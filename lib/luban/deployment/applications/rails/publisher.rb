@@ -7,16 +7,16 @@ module Luban
             super("RAILS_ENV=#{stage} #{bundle_cmd} exec #{cmd}")
           end
 
+          def after_publish
+            super
+            publish_assets! if publish_app?
+          end
+
           protected
 
           def init
             super
             linked_files.push('database.yml', 'secrets.yml')
-          end
-
-          def publish!
-            super
-            publish_assets! if publish_app?
           end
 
           def publish_assets!
