@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.1.3 (Sept 01, 2016)
+
+Minor enhancements:
+  * Added RAILS_ENV setup to the shell command prefix
+
 ## Version 0.1.2 (Sept 01, 2016)
 
 Bug fixes:
