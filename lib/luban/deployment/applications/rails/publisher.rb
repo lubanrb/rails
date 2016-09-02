@@ -3,13 +3,23 @@ module Luban
     module Applications
       class Rails
         class Publisher < Luban::Deployment::Applications::Rack::Publisher
+          include Parameters
+
           def shell_command_prefix
             @shell_command_prefix ||= super.unshift("RAILS_ENV=#{stage}")
           end
 
+          def rails_version
+            capture(compose_command("rails --version")).gsub('Rails ', '')
+          end
+
+          def rails_version_match?(version)
+            Gem::Requirement.new(version).satisfied_by?(Gem::Version.new(rails_version))
+          end
+
           def after_publish
             super
-            publish_assets! if publish_app?
+            publish_assets! if assets_precompile and rails_version_match?(">=3.1") and publish_app?
           end
 
           protected
