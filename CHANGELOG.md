@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.1.4 (Sept 04, 2016)
+
+Minor enhancements:
+  * Extended support for assets precompilation
+    * Added parameter #assets_precompile to turn on/off assets precompilation
+    * Checked rails version (>=3.1) before assets precompilation starts
+
 ## Version 0.1.3 (Sept 01, 2016)
 
 Minor enhancements:
