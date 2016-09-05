@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.1.5 (Sept 05, 2016)
+
+Minor enhancements:
+  * Added general database configuration template for Rails 4.0 or earlier
+
 ## Version 0.1.4 (Sept 04, 2016)
 
 Minor enhancements:
