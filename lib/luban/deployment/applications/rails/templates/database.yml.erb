@@ -1,18 +1,47 @@
-# It's recommended to use an environment variable, DATABASE_URL, to configure a database
-# The database url can be setup in env_vars.rb of Luban:
+# Please refer to Rails Guides for the details of database configuration:
+#   http://guides.rubyonrails.org/configuring.html#configuring-a-database
+# 
+# For Rails 4.0 or earlier
+#
+# The only way to correctly configure the connection to a database was to
+# use the config/database.yml file.
+#
+#   SQLite3:
+#
+#   <%= stage %>:
+#     adapter: sqlite3
+#     database: db/<%= application %>_<%= stage %>.sqlite3
+#     pool: 5
+#     timeout: 5000
 #
 #   MySQL:
+#  
+#   <%= stage %>:
+#     adapter: mysql2
+#     encoding: utf8
+#     host: <%%= ENV["DATABASE_HOST"] %>
+#     database: <%= application %>_<%= stage %>
+#     pool: 5
+#     username: root
+#     password: <%%= ENV["DATABASE_PASSWORD"] %>
+#     socket: /tmp/mysql.sock
 #
-#   env_vars[:database_url] = 
-#      "mysql2://username:password@host:port/#{application}_#{stage}?encoding=utf8&pool=5"
+# Sensitive information like database password is recommended to setup in env_vars.rb of Luban.
+# 
+# For Rails 4.1+
+#
+# It's recommended to use an environment variable, DATABASE_URL, to configure a database
+# The database url can be setup in env_vars.rb of Luban:
 #
 #   SQLite3:
 #
 #   env_vars[:database_url] = 
 #      "sqlite3:db/#{application}_#{stage}.sqlite3?pool=5&timeout=5000"
 #
-# Please refer to Rails Guides for the details of database url:
-#   http://guides.rubyonrails.org/configuring.html#configuring-a-database
-
-<%= stage %>:
-  url: <%%= ENV["DATABASE_URL"] %>
+#   MySQL:
+#
+#   env_vars[:database_url] = 
+#      "mysql2://username:password@host:port/#{application}_#{stage}?encoding=utf8&pool=5"
+#
+# <%= stage %>:
+#  url: <%%= ENV["DATABASE_URL"] %>
