@@ -1,0 +1,12 @@
+# Logrotate configuration for Rails
+
+<%= log_path.join("#{stage}.log") %> {
+  daily
+  missingok
+  rotate 14
+  compress
+  delaycompress
+  dateext
+  notifempty
+  copytruncate
+}
