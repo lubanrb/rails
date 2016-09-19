@@ -1,5 +1,15 @@
 # Change log
 
+## Version 0.1.6 (Sept 19, 2016)
+
+Minor enhancements:
+  * Added logrotate configuration template for Rails
+  * Set up environment variables for RAILS_ENV in envrc by default
+  * Refactored the way of composing shell commands
+    * As a result, bumped up the gem dependency on Luban to version 0.8.0 and
+    * Bumped up the gem dependency on Luban::Rack to version 0.2.7
+
+
 ## Version 0.1.5 (Sept 05, 2016)
 
 Minor enhancements:
