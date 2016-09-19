@@ -5,12 +5,8 @@ module Luban
         class Publisher < Luban::Deployment::Applications::Rack::Publisher
           include Parameters
 
-          def shell_command_prefix
-            @shell_command_prefix ||= super.unshift("RAILS_ENV=#{stage}")
-          end
-
           def rails_version
-            capture(compose_command("rails --version")).gsub('Rails ', '')
+            capture(bundle_command("rails --version")).gsub('Rails ', '')
           end
 
           def rails_version_match?(version)
@@ -35,11 +31,11 @@ module Luban
           end
 
           def compile_assets!
-            execute(compose_command("rake assets:precompile"))
+            execute(bundle_command("rake assets:precompile"))
           end
 
           def cleanup_assets!
-            execute(compose_command("rake assets:clean"))
+            execute(bundle_command("rake assets:clean"))
           end
         end
       end
