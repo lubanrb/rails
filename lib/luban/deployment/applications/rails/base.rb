@@ -13,6 +13,7 @@ module Luban
 
           def set_default_rails_parameters
             set_default :assets_precompile, true
+            env_vars[:rails_env] = stage
           end
         end
 
