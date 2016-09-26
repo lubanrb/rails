@@ -1,5 +1,11 @@
 # Change log
 
+## Version 0.1.7 (Sept 27, 2016)
+
+Minor enhancements:
+  * Skipped asset compilation if no source code updates
+  * Updated gem dependency on luban-rack to 0.2.8
+
 ## Version 0.1.6 (Sept 19, 2016)
 
 Minor enhancements:
