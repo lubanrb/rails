@@ -15,7 +15,8 @@ module Luban
 
           def after_publish
             super
-            publish_assets! if publish_app? and assets_precompile and rails_version_match?(">=3.1")
+            publish_assets! if publish_app? and task.result.status != :skipped and 
+                               assets_precompile and rails_version_match?(">=3.1")
           end
 
           protected
