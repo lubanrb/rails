@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.1.9 (Oct 19, 2016)
+
+Minor enhancements:
+  * Utilized new parameters, #logrotate_max_age, #logrotate_count, from Luban to unify logrotate setup
+  * Bump up gem dependency of Luban to version 0.9.8
+  * Bump up gem dependency of luban-rack to version 0.2.13
+
 ## Version 0.1.8 (Sept 28, 2016)
 
 Minor enhancements:
