@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.1.10 (Oct 23, 2016)
+
+Minor enhancements:
+  * Cleaned up the design and implementation of Rails app parameters in a deployment project
+    * As a result, bump up gem dependency on Luban to version 0.9.10
+    * As a result, bump up gem dependency on Rack to version 0.2.14
+
 ## Version 0.1.9 (Oct 19, 2016)
 
 Minor enhancements:
