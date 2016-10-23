@@ -4,26 +4,12 @@ module Luban
   module Deployment
     module Applications
       class Rails < Luban::Deployment::Applications::Rack
-        module Parameters
-          extend Luban::Deployment::Parameters::Base
-
-          parameter :assets_precompile
-
-          protected
-
-          def set_default_rails_parameters
-            set_default :assets_precompile, true
-            env_vars[:rails_env] = stage
-          end
-        end
-
-        include Parameters
+        parameter :assets_precompile, default: true
 
         protected
 
-        def set_default_application_parameters
-          super
-          set_default_rails_parameters
+        def set_default_for_rails_env
+          env_vars[:rails_env] = stage
         end
 
         def include_default_templates_path

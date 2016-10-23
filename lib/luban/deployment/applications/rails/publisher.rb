@@ -3,8 +3,6 @@ module Luban
     module Applications
       class Rails
         class Publisher < Luban::Deployment::Applications::Rack::Publisher
-          include Parameters
-
           def rails_version
             capture(bundle_command("rails --version")).gsub('Rails ', '')
           end
