@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.1.11 (Nov 24, 2016)
+
+Minor enhancements:
+  * Made use of linked_files convention
+    * Relocated database.yml.erb and secret.yml.erb to templates/config
+    * As a result, bump up gem dependency of Luban to version 0.10.4
+
 ## Version 0.1.10 (Oct 23, 2016)
 
 Minor enhancements:
