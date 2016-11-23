@@ -19,11 +19,6 @@ module Luban
 
           protected
 
-          def init
-            super
-            linked_files.push('database.yml', 'secrets.yml')
-          end
-
           def publish_assets!
             compile_assets!
             cleanup_assets!
