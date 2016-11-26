@@ -1,5 +1,14 @@
 # Change log
 
+## Version 0.1.12 (Nov 26, 2016)
+
+Minor enhancements:
+  * Bump up gem dependency of luban to version 0.10.8
+  * Bump up gem depednency of luban-rack to version 0.2.22
+
+Bug fixes:
+  * Fixed superclass mismatch exception when loading gem from filesystem directly
+
 ## Version 0.1.11 (Nov 24, 2016)
 
 Minor enhancements:
