@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.1.14 (Feb 23, 2017)
+
+Minor enhancements: 
+  * Bump up gem dependency of Luban to version 0.12.8
+    * To make use of the util method, #version_match?, to clean up code
+  * Bump up gem depdency of luban-rack to version 0.2.25
+
 ## Version 0.1.13 (Nov 27, 2016)
 
 Minor enhancements:
