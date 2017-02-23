@@ -7,8 +7,8 @@ module Luban
             capture(bundle_command("rails --version")).gsub('Rails ', '')
           end
 
-          def rails_version_match?(version)
-            Gem::Requirement.new(version).satisfied_by?(Gem::Version.new(rails_version))
+          def rails_version_match?(version_requirement)
+            version_match?(rails_version, version_requirement)
           end
 
           def after_publish
